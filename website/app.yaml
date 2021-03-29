@@ -1,0 +1,16 @@
+application: 3fd187f8-d853-43e9-927e-0c07917ab76f
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /(.+\.(html|css|gif|png|jpg))$
+  static_files: \1
+  upload: .+\.(html|css|gif|png|jpg)$
+  application_readable: true
+
+- url: /.*
+  static_files: index.html
+  upload: index.html
+  application_readable: true
